@@ -78,3 +78,24 @@ export const ContainerButtonSubmit = styled.div`
     width: auto;
   }
 `;
+
+export const ContainerInputGroup = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &.three {
+    .input-group {
+      :nth-child(1),
+      :nth-child(2) {
+        margin-right: 55px;
+      }
+    }
+  }
+
+  .input-group {
+    :first-child {
+      margin-right: 55px;
+    }
+  }
+`;

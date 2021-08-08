@@ -9,22 +9,22 @@ export default function RouteWrapper({
 }) {
   let dados = localStorage.getItem('dadosEmpresa');
 
-  if (!dados && isPrivate) {
-    return <Redirect to="/login" />;
-  }
+  // if (!dados && isPrivate) {
+  //   return <Redirect to="/login" />;
+  // }
 
-  dados = JSON.parse(dados);
+  // dados = JSON.parse(dados);
 
-  if (isPrivate) {
-    return (
-      <Route
-        {...rest}
-        component={() => {
-          return <Component dados={dados} />;
-        }}
-      />
-    );
-  }
+  // if (isPrivate) {
+  //   return (
+  //     <Route
+  //       {...rest}
+  //       component={() => {
+  //         return <Component dados={dados} />;
+  //       }}
+  //     />
+  //   );
+  // }
 
   return <Route {...rest} component={Component} />;
 }

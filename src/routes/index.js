@@ -27,22 +27,6 @@ export default function Routes() {
       <Route path="/login" exact component={Login} />
       <Route path="/esqueceu-senha" exact component={EsqueceuSenha} />
 
-      <Route
-        path="/assinatura/dados-cadastrais"
-        exact
-        component={DadosCadastrais}
-      />
-      <Route
-        path="/assinatura/formas-pagamento"
-        exact
-        component={FormasPagamento}
-      />
-      <Route path="/assinatura/pagamento" exact component={Pagamento} />
-      <Route
-        path="/assinatura/finaliza-operacao"
-        exact
-        component={FinalizaOperacao}
-      />
       <Route path="/dashboard" exact isPrivate component={DashboardPainel} />
       <Route path="/dashboard/vagas" isPrivate exact component={Vagas} />
       <Route

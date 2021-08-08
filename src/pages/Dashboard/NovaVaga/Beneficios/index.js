@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, ContainerNovo, Box, BeneficiosContainer } from './style';
+import { Container, Box, ContainerSubmit, ContainerInputGroup } from './style';
 
 import Button from '../../../../components/Dashboard/Button';
 import Input from '../../../../components/Input';
-import Select from '../../../../components/Select';
-
-import IconTrash from '../../../../assets/icons/trash.svg';
 
 import { useForm } from 'react-hook-form';
-
-//Json
-import regrasPeriocidade from '../../../../assets/json/regrasPeriocidade';
-import regrasBeneficios from '../../../../assets/json/regrasBeneficios';
 
 export default function Benenficios() {
   const [beneficios, setbeneficios] = useState([]);
@@ -60,64 +53,31 @@ export default function Benenficios() {
   return (
     <Container>
       <Box onSubmit={handleSubmit(onSubmit)}>
-        {beneficios.length <= 0 ? (
-          <>
-            <h2>Você ainda não possui beneficios para essa vaga</h2>
-          </>
-        ) : (
-          beneficios.map((item, index) => {
-            return (
-              <BeneficiosContainer className="atividade" data-index={JSON.stringify(item)}>
-                {console.log(item)}
-                <p>{item.beneficios.label}</p>
-                <p>{item.periocidade_beneficio.label}</p>
-                <p>{item.valor_beneficio}</p>
-                <button
-                  type="button"
-                  className="button-no-style"
-                  onClick={() => remove(item)}
-                >
-                  <img src={IconTrash} alt="Icon Trash" />
-                </button>
-              </BeneficiosContainer>
-            );
-          })
-        )}
-        <ContainerNovo>
-          <Select
-            type="text"
+        <ContainerInputGroup>
+          <Input
             tipo="dashboard"
-            label="Escolha um dos benefícios"
-            placeholder="Escolha"
-            name="beneficios"
+            textarea={true}
+            rowstextarea={10}
+            label="Sobre você"
+            name="sobre_voce"
             control={control}
-            options={regrasBeneficios}
-            errors={errors.beneficios?.message}
+            placeholder="Conta pra gente um pouco mais sobre você!"
+            errors={errors.sobre_voce?.message}
           />
           <Input
-            type="text"
             tipo="dashboard"
-            label="Escolha um dos benefícios"
-            placeholder="Valor"
-            name="valor_beneficio"
+            textarea={true}
+            rowstextarea={10}
+            label="Momento profissional"
+            name="momento_profissional"
             control={control}
-            options={{
-              numericOnly: true,
-            }}
-            errors={errors.valor_beneficio?.message}
+            placeholder="Conta pra gente qual o seu momento profissional. Fica a vontade!"
+            errors={errors.momento_profissional?.message}
           />
-          <Select
-            type="text"
-            tipo="dashboard"
-            label="Periodicidade"
-            placeholder="Escolha a periodicdade"
-            name="periocidade_beneficio"
-            control={control}
-            options={regrasPeriocidade}
-            errors={errors.periocidade_beneficio?.message}
-          />
-        </ContainerNovo>
-        <Button tipo="orange">Adicionar novo</Button>
+        </ContainerInputGroup>
+        <ContainerSubmit>
+          <Button tipo="primary">Próximo</Button>
+        </ContainerSubmit>
       </Box>
     </Container>
   );

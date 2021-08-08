@@ -8,11 +8,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Button from '../../../../components/Dashboard/Button';
 
 import Input from '../../../../components/Input';
-import Select from '../../../../components/Select';
 
 import { DadosGeraisVagaValidation } from '../../../../validation/validations';
-
-import regrasTipoContrato from '../../../../assets/json/regrasTipoContrato';
 
 export default function DadosGerais() {
   const [areas, setAreas] = useState('');
@@ -55,7 +52,7 @@ export default function DadosGerais() {
   useEffect(() => {
     if(localStorage.getItem("dados-gerais")) {
       const dadosGerais = JSON.parse(localStorage.getItem('dados-gerais'));
-      
+
       reset(dadosGerais);
     }
   }, [])
@@ -72,98 +69,72 @@ export default function DadosGerais() {
           <Input
             type="text"
             tipo="dashboard"
-            label="Título da vaga"
-            placeholder="Digite o título da vaga"
-            name="titulo"
+            label="Nome"
+            placeholder="Digite o seu nome"
+            name="nome"
             control={control}
             options={{
               delimiters: [''],
             }}
-            errors={errors.titulo?.message}
+            errors={errors.nome?.message}
           />
           <Input
             type="text"
             tipo="dashboard"
-            label="Cargo"
-            placeholder="Digite o cargo da vaga"
-            name="cargo"
+            label="Sobrenome"
+            placeholder="Digite o seu sobrenome"
+            name="sobrenome"
             control={control}
             options={{
               delimiters: [''],
             }}
-            errors={errors.cargo?.message}
+            errors={errors.sobrenome?.message}
           />
         </ContainerInputGroup>
         <ContainerInputGroup>
           <Input
             type="text"
             tipo="dashboard"
-            label="Número de vagas"
-            placeholder="Digite o número da vaga"
-            name="numero_vagas"
+            label="Documento (CPF)"
+            placeholder="Digite o seu CPF"
+            name="documento"
             control={control}
             options={{
               numericOnly: true,
             }}
-            errors={errors.numero_vagas?.message}
+            errors={errors.documento?.message}
           />
           <Input
             tipo="dashboard"
-            label="Até quando a vaga fica aberta?"
-            name="data_finalizacao"
+            label="Data de nascimento"
+            name="data_nascimento"
             control={control}
             type="date"
             placeholder="Escolha a data"
-            errors={errors.data_finalizacao?.message}
-          />
-        </ContainerInputGroup>
-        <Select
-          tipo="dashboard"
-          label="Área da vaga"
-          name="tipo_area_id"
-          control={control}
-          options={areas}
-          placeholder="Escolher Área"
-          errors={errors.tipo_area_id?.message}
-        />
-        <ContainerInputGroup>
-          <Select
-            tipo="dashboard"
-            label="Período da vaga"
-            name="tipo_periodo_id"
-            control={control}
-            options={areas}
-            placeholder="Escolher Período"
-            errors={errors.tipo_periodo_id?.message}
-          />
-          <Select
-            tipo="dashboard"
-            label="Tipo de contrato da vaga"
-            name="tipo_contrato_id"
-            control={control}
-            options={regrasTipoContrato}
-            placeholder="Escolher Tipo Contrato"
-            errors={errors.tipo_contrato_id?.message}
+            errors={errors.data_nascimento?.message}
           />
         </ContainerInputGroup>
         <ContainerInputGroup>
           <Input
+            type="text"
             tipo="dashboard"
-            label="Salário Inicial da vaga"
-            name="salario_inicial"
+            label="Email"
+            placeholder="Digite o seu email"
+            name="email"
             control={control}
-            currency
-            placeholder="Escolher Salário Inicial"
-            errors={errors.salario_inicial?.message}
+            options={{
+              numericOnly: true,
+            }}
+            errors={errors.email?.message}
           />
           <Input
+            type="text"
             tipo="dashboard"
-            label="Salário Final da vaga"
-            name="salario_final"
+            label="Telefone"
+            name="telefone"
             control={control}
-            currency
-            placeholder="Escolher Salário Final"
-            errors={errors.salario_final?.message}
+            placeholder="Digite o seu telefone"
+            errors={errors.telefone?.message}
           />
         </ContainerInputGroup>
         <ContainerSubmit>

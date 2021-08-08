@@ -67,14 +67,14 @@ export default function Login() {
       </ContainerHeader>
       <Box>
         <ContainerTitle>
-          <h2>Comece a recrutar</h2>
-          <span>Entrar para continuar na IReview.</span>
+          <h2>Encontre o emprego dos sonhos</h2>
+          <span>Entrar para continuar na iReview.</span>
         </ContainerTitle>
         <BoxInside>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Input
               type="text"
-              label="Email corporativo"
+              label="Email"
               name="email"
               control={control}
               errors={errors.email?.message}
@@ -91,7 +91,7 @@ export default function Login() {
             <ContainerButtonSubmit>
               <Botao type="submit">Entrar</Botao>
               <p>
-                Não possui conta? <Link to="/assinatura">Cadastrar</Link>
+                Não possui conta ainda? <Link to="/assinatura">Cadastrar</Link>
               </p>
             </ContainerButtonSubmit>
           </form>
