@@ -29,12 +29,7 @@ export default function Routes() {
 
       <Route path="/dashboard" exact isPrivate component={DashboardPainel} />
       <Route path="/dashboard/vagas" isPrivate exact component={Vagas} />
-      <Route
-        path="/dashboard/vagas/nova"
-        isPrivate
-        exact
-        component={NovaVaga}
-      />
+      <Route path="/cadastrar" exact component={NovaVaga} />
       <Route path="/dashboard/vagas/:id" isPrivate exact component={VagaID} />
       <Route
         path="/dashboard/candidatos"

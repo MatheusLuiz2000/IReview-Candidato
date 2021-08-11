@@ -20,11 +20,13 @@ export const Box = styled.form`
 
 export const ContainerSubmit = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  margin: 35px 0px;
+  width: 100%;
 
   button {
-    width: 100%;
+    text-align: right;
+    width: auto;
   }
 `;
 

@@ -12,8 +12,10 @@ import Regras from './Regras';
 import Beneficios from './Beneficios';
 import Provas from './Provas';
 import Informacoes from './Informacoes';
+import Cursos from './Cursos';
+import InformacoesImportantes from './InformacoesImportantes';
 
-export default function NovaVaga() {
+export default function Cadastrar() {
   const [tabIndex, setTabIndex] = useState(1);
 
   const changeTab = number => {
@@ -21,9 +23,9 @@ export default function NovaVaga() {
   };
 
   return (
-    <CriacaoVaga active="vagas" titulo="Vagas - Criar Vaga">
+    <CriacaoVaga active="vagas" titulo="Cadastrar dados">
       <Container>
-        <TimeLineVaga changeTab={changeTab} />
+        <TimeLineVaga changeTab={changeTab} selected={tabIndex - 1} />
         <Tabs selectedIndex={tabIndex - 1}>
           <TabPanel>
             <DadosGerais />
@@ -42,6 +44,12 @@ export default function NovaVaga() {
           </TabPanel>
           <TabPanel>
             <Informacoes />
+          </TabPanel>
+          <TabPanel>
+            <Cursos />
+          </TabPanel>
+          <TabPanel>
+            <InformacoesImportantes />
           </TabPanel>
         </Tabs>
       </Container>

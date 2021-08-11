@@ -1,37 +1,40 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
   position: relative;
-  margin-bottom: 55px;
-
-  hr {
-    border: 6px solid #0c1e5b;
-    width: 82%;
-    border-radius: 10px;
-    position: absolute;
-    z-index: -1;
-    top: 30px;
-    left: 93px;
-  }
+  margin-bottom: 32px;
 `;
 
 export const Box = styled.div`
-  margin-right: 50px;
-  text-align: center;
-  cursor: pointer;
+  ${({ selected }) => css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #0000001c;
+    color: #7c7d8d;
+    font-size: 14px;
+    padding: 4px;
+    border-radius: 5px;
+    margin-right: 24px;
+    text-align: center;
+    cursor: pointer;
+    height: 56px;
+    color: #112776;
 
-  :last-child {
-    margin-right: 0px;
-  }
+    ${selected &&
+    css`
+        background-color: #112776;
+        color: #ffffff;
+    `}
 
-  h3 {
-    margin-top: 20px;
-    color: #313236;
-    font-size: 17px;
-  }
+    :last-child {
+      margin-right: 0px;
+    }
+  `}
 `;
 
 export const Circle = styled.div`

@@ -71,7 +71,7 @@ export default function Benenficios() {
             label="Momento profissional"
             name="momento_profissional"
             control={control}
-            placeholder="Conta pra gente qual o seu momento profissional. Fica a vontade!"
+            placeholder="Conta pra gente qual o seu momento profissional!"
             errors={errors.momento_profissional?.message}
           />
         </ContainerInputGroup>

@@ -20,12 +20,11 @@ export const DadosCadastraisValidation = Yup.object().shape({
         return true;
       }
     }),
-  contato_empresa: Yup.string('Senha da empresa obrigatório')
-    .required('Contato da empresa obrigatório')
+  contato_empresa: Yup.string('Senha obrigatória')
+    .required('Contato obrigatório')
     .test('Contato Inválido', 'Contato Inválido', function(item) {
       if (item) {
         const contato = limpaString(item);
-        console.log(contato);
         if (contato.length !== 11) {
           return false;
         }
@@ -162,9 +161,7 @@ export const LoginValidation = Yup.object().shape({
     .required('Email obrigatório')
     .email('Email inválido'),
 
-  senha: Yup.string('Senha da empresa obrigatório').required(
-    'Senha da empresa obrigatório'
-  ),
+  senha: Yup.string('Senha obrigatória').required('Senha obrigatória'),
 });
 
 export const ContaValidation = Yup.object().shape({

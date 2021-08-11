@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.form`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  max-width: 900px;
   margin: 0 auto;
-  align-items: center;
 `;
 
 export const ContainerRegras = styled.div`

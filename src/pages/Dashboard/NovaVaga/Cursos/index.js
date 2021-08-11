@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
-
-import { Container, ContainerInputGroup, ContainerButtonSubmit } from './style';
-
-import Button from '../../../../components/Dashboard/Button';
-import Input from '../../../../components/Input';
 import { useForm } from 'react-hook-form';
 
+import { Container, ContainerButtonSubmit, ContainerInputGroup } from './style';
+import Input from '../../../../components/Input';
+
+import Button from '../../../../components/Dashboard/Button';
 import limpaObjeto from '../../../../util/limpaObjeto';
 
-export default function Regras() {
+export default function Cursos() {
   const {
     handleSubmit,
     control,
@@ -23,63 +22,50 @@ export default function Regras() {
       reset(dados);
     }
 
-  }, [])
+  }, []);
+
   const onSubmit = e => {
     localStorage.setItem("regras-vagas", JSON.stringify(limpaObjeto(e)));
   };
 
   return (
     <Container onSubmit={handleSubmit(onSubmit)}>
+      <Input
+        type="text"
+        tipo="dashboard"
+        label="Nome do curso"
+        placeholder="Digite o nome do curso"
+        name="nome_curso"
+        control={control}
+        options={{
+          delimiters: [''],
+        }}
+        errors={errors.nome_curso?.message}
+      />
       <ContainerInputGroup>
         <Input
           type="text"
           tipo="dashboard"
-          label="Nome da formação"
-          placeholder="Digite o nome da formação"
-          name="formacao"
+          label="Área do curso"
+          placeholder="Digite a área do curso"
+          name="area_curso"
           control={control}
           options={{
             delimiters: [''],
           }}
-          errors={errors.formacao?.message}
+          errors={errors.area_curso ?.message}
         />
         <Input
           type="text"
           tipo="dashboard"
-          label="Nome da instituição da formação"
-          placeholder="Digite o nome da instituição da formação"
-          name="institucao"
+          label="Nome da instituição do curso"
+          placeholder="Digite o nome da instituição do curso"
+          name="nome_instituicao_curso"
           control={control}
           options={{
             delimiters: [''],
           }}
-          errors={errors.institucao?.message}
-        />
-      </ContainerInputGroup>
-      <ContainerInputGroup>
-        <Input
-          type="text"
-          tipo="dashboard"
-          label="Área da formação"
-          placeholder="Digite a área da formação"
-          name="area_formacao"
-          control={control}
-          options={{
-            delimiters: [''],
-          }}
-          errors={errors.area_formacao?.message}
-        />
-        <Input
-          type="text"
-          tipo="dashboard"
-          label="Tipo da formação"
-          placeholder="Digite o tipo da formação"
-          name="tipo_formacao"
-          control={control}
-          options={{
-            delimiters: [''],
-          }}
-          errors={errors.tipo_formacao?.message}
+          errors={errors.nome_instituicao_curso?.message}
         />
       </ContainerInputGroup>
       <ContainerInputGroup>
@@ -107,32 +93,32 @@ export default function Regras() {
           type="text"
           tipo="dashboard"
           rowstextarea={8}
-          label="Descrição da formação"
-          placeholder="Digite a descrição da formação"
-          name="descricao_formacao"
+          label="Descrição do curso"
+          placeholder="Digite a descrição do curso"
+          name="descricao_curso"
           control={control}
           options={{
             delimiters: [''],
           }}
-          errors={errors.descricao_formacao?.message}
+          errors={errors.descricao_curso?.message}
         />
         <Input
           type="text"
           tipo="dashboard"
           rowstextarea={8}
-          label="Habilidade desenvolvidas na formação"
-          placeholder="Digite as habilidades desenvolvidas na formação"
-          name="habilidades_formacao"
+          label="Habilidade desenvolvidas do curso"
+          placeholder="Digite as habilidades desenvolvidas do curso"
+          name="habilidades_curso"
           control={control}
           options={{
             delimiters: [''],
           }}
-          errors={errors.habilidades_formacao?.message}
+          errors={errors.habilidades_curso?.message}
         />
       </ContainerInputGroup>
       <ContainerButtonSubmit>
       <Button type="submit">Próximo</Button>
       </ContainerButtonSubmit>
     </Container>
-  );
+  )
 }

@@ -61,7 +61,7 @@ export default function Login() {
     <Container>
       <ContainerHeader>
         <img src={Logo} alt="Logo" />
-        <Link to="/assinatura">
+        <Link to="/cadastrar">
           <Botao type="button">Cadastrar</Botao>
         </Link>
       </ContainerHeader>
@@ -91,7 +91,7 @@ export default function Login() {
             <ContainerButtonSubmit>
               <Botao type="submit">Entrar</Botao>
               <p>
-                Não possui conta ainda? <Link to="/assinatura">Cadastrar</Link>
+                Não possui conta ainda? <Link to="/cadastrar">Cadastrar</Link>
               </p>
             </ContainerButtonSubmit>
           </form>

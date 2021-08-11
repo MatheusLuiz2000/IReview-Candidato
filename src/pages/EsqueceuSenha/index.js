@@ -59,7 +59,7 @@ export default function EsqueceuSenha() {
             <ContainerButtonSubmit>
               <Botao type="submit">Entrar</Botao>
               <p>
-                Não possui conta? <Link to="/entrar">Cadastrar</Link>
+                Não possui conta? <Link to="/cadastrar">Cadastrar</Link>
               </p>
             </ContainerButtonSubmit>
           </form>

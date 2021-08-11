@@ -30,7 +30,7 @@ export const ContainerHeader = styled.div`
 export const ContainerTitle = styled.div`
   color: #ffff;
   text-align: center;
-  margin-bottom: 55px;
+  margin-bottom: 8px;
 
   h2 {
     font-weight: 600;

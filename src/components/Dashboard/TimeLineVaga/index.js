@@ -1,65 +1,33 @@
 import React from 'react';
 
-import { Container, Box, Circle } from './style';
+import { Container, Box } from './style';
 
-import IconDados from '../../../assets/icons/dados.svg';
-import IconAtividadesExercidas from '../../../assets/icons/atividadesexercidas.svg';
-import IconRegras from '../../../assets/icons/ranqueamento.svg';
-import IconProvas from '../../../assets/icons/regras.svg';
-import IconBox from '../../../assets/icons/box2.svg';
-import IconInfo from '../../../assets/icons/info.svg';
-
-export default function TimeLineVaga({ changeTab }) {
+export default function TimeLineVaga({ changeTab, selected }) {
   return (
     <Container>
-      <hr />
-      <Box onClick={() => changeTab(1)}>
-        <Circle>
-          <img src={IconDados} alt="Icon - Dados cadastrais" />
-        </Circle>
-        <h3>Dados Cadastrais</h3>
+      <Box selected={selected === 0} onClick={() => changeTab(1)}>
+        <h4>Dados Cadastrais</h4>
       </Box>
-      <Box onClick={() => changeTab(2)}>
-        <Circle>
-          <img src={IconBox} alt="Icon - Box" />
-        </Circle>
-        <h3>Sobre você</h3>
+      <Box selected={selected === 1} onClick={() => changeTab(2)}>
+        <h4>Sobre você</h4>
       </Box>
-      <Box onClick={() => changeTab(3)}>
-        <Circle>
-          <img src={IconAtividadesExercidas} alt="Icon - Atividade Exercidas" />
-        </Circle>
-        <h3>Endereço</h3>
+      <Box selected={selected === 2} onClick={() => changeTab(3)}>
+        <h4>Endereço</h4>
       </Box>
-      <Box onClick={() => changeTab(4)}>
-        <Circle>
-          <img src={IconRegras} alt="Icon - Regras de seleção" />
-        </Circle>
-        <h3>Formação</h3>
+      <Box selected={selected === 3} onClick={() => changeTab(4)}>
+        <h4>Formação</h4>
       </Box>
-      <Box onClick={() => changeTab(5)}>
-        <Circle>
-          <img src={IconProvas} alt="Icon - Provas de seleção" />
-        </Circle>
-        <h3>Histórico Profissional</h3>
+      <Box selected={selected === 4} onClick={() => changeTab(5)}>
+        <h4>Histórico Profissional</h4>
       </Box>
-      <Box onClick={() => changeTab(6)}>
-        <Circle>
-          <img src={IconInfo} alt="Icon - IconInfo" className="info" />
-        </Circle>
-        <h3>Idiomas</h3>
+      <Box selected={selected === 5} onClick={() => changeTab(6)}>
+        <h4>Idiomas</h4>
       </Box>
-      <Box onClick={() => changeTab(7)}>
-        <Circle>
-          <img src={IconInfo} alt="Icon - IconInfo" className="info" />
-        </Circle>
-        <h3>Cursos/Certificações</h3>
+      <Box selected={selected === 6} onClick={() => changeTab(7)}>
+        <h4>Cursos/Certificações</h4>
       </Box>
-      <Box onClick={() => changeTab(8)}>
-        <Circle>
-          <img src={IconInfo} alt="Icon - IconInfo" className="info" />
-        </Circle>
-        <h3>Informações importantes</h3>
+      <Box selected={selected === 7} onClick={() => changeTab(8)}>
+        <h4>Informações importantes</h4>
       </Box>
     </Container>
   );
