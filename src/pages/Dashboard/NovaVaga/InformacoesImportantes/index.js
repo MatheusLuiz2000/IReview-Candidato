@@ -5,25 +5,19 @@ import {
   Container,
   ContainerButtonSubmit,
   ContainerInputGroup,
-  Label,
   LastBox,
-  Select,
 } from './style';
 
 import Button from '../../../../components/Dashboard/Button';
+import Select from '../../../../components/Select';
 import limpaObjeto from '../../../../util/limpaObjeto';
 
 export default function InformacoesImportantes() {
-  const {
-    handleSubmit,
-    control,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const { handleSubmit, control, reset } = useForm();
 
   useEffect(() => {
-    if(localStorage.getItem("regras-vagas")) {
-      const dados = JSON.parse(localStorage.getItem("regras-vagas"));
+    if(localStorage.getItem("infos-importantes")) {
+      const dados = JSON.parse(localStorage.getItem("infos-importantes"));
 
       reset(dados);
     }
@@ -31,59 +25,107 @@ export default function InformacoesImportantes() {
   }, []);
 
   const onSubmit = e => {
-    localStorage.setItem("regras-vagas", JSON.stringify(limpaObjeto(e)));
+    console.log('event', e);
+    localStorage.setItem("infos-importantes", JSON.stringify(limpaObjeto(e)));
   };
 
   return (
     <Container onSubmit={handleSubmit(onSubmit)}>
       <ContainerInputGroup>
-        <div>
-          <Label>Início imediato?</Label>
-          <Select name="inicio_imediato">
-            <option value="sim" selected>
-              Sim
-            </option>
-            <option value="nao">Não</option>
-          </Select>
-        </div>
-        <div>
-          <Label>Aceita viajar com a empresa?</Label>
-          <Select name="viajar_empresa">
-            <option value="aceito" selected>
-              Aceito
-            </option>
-            <option value="nao_aceito">Não aceito</option>
-          </Select>
-        </div>
+        <Select
+          type="text"
+          tipo="dashboard"
+          label="Início imediato?"
+          placeholder="Escolha uma opção"
+          name="inicio_imediato"
+          control={control}
+          options={[
+            {
+              value: 'sim',
+              label: 'Sim',
+            },
+            {
+              value: 'nao',
+              label: 'Não',
+            }
+          ]}
+        />
+        <Select
+          type="text"
+          tipo="dashboard"
+          label="Aceita viajar com a empresa?"
+          placeholder="Escolha uma opção"
+          name="viajar_empresa"
+          control={control}
+          options={[
+            {
+              value: 'aceito',
+              label: 'Aceito',
+            },
+            {
+              value: 'nao_aceito',
+              label: 'Não aceito',
+            }
+          ]}
+        />
       </ContainerInputGroup>
       <ContainerInputGroup>
-        <div>
-          <Label>Aceita mudança de endereço?</Label>
-          <Select name="mudar_endereco">
-            <option value="aceito_mudar" selected>
-              Aceito
-            </option>
-            <option value="nao_aceito_mudar">Não aceito</option>
-          </Select>
-        </div>
-        <div>
-          <Label>Possui CNPJ Aberto?</Label>
-          <Select name="cnpj_aberto">
-            <option value="tenho_cnpj_aberto" selected>
-              Sim
-            </option>
-            <option value="nao_tenho_cnpj_aberto">Não</option>
-          </Select>
-        </div>
+        <Select
+          type="text"
+          tipo="dashboard"
+          label="Aceita mudança de endereço?"
+          placeholder="Escolha uma opção"
+          name="mudar_endereco"
+          control={control}
+          options={[
+            {
+              value: 'aceito',
+              label: 'Aceito',
+            },
+            {
+              value: 'nao_aceito',
+              label: 'Não aceito',
+            }
+          ]}
+        />
+        <Select
+          type="text"
+          tipo="dashboard"
+          label="Possui CNPJ Aberto?"
+          placeholder="Escolha uma opção"
+          name="cnpj_aberto"
+          control={control}
+          options={[
+            {
+              value: 'sim',
+              label: 'Sim',
+            },
+            {
+              value: 'nao',
+              label: 'Não',
+            }
+          ]}
+        />
       </ContainerInputGroup>
       <LastBox>
-        <Label>Possui filhos?</Label>
-        <Select name="possui_filhos">
-          <option value="tenho_filhos" selected>
-            Sim, possuo filhos
-          </option>
-          <option value="nao_tenho_filhos">Não possuo filhos</option>
-        </Select>
+        <Select
+          type="text"
+          tipo="dashboard"
+          label="Possui filhos?"
+          placeholder="Escolha uma opção"
+          name="cnpj_aberto"
+          control={control}
+          options={[
+            {
+              value: 'tenho_filhos',
+              label: 'Sim, possuo filhos',
+            },
+            {
+              value: 'nao_tenho_filhos',
+              label: 'Não possuo filhos',
+            }
+          ]}
+        />
       </LastBox>
       <ContainerButtonSubmit>
         <Button type="submit">Finalizar</Button>

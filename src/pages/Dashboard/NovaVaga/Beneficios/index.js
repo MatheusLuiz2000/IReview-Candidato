@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { Container, Box, ContainerSubmit, ContainerInputGroup } from './style';
 
@@ -6,49 +6,31 @@ import Button from '../../../../components/Dashboard/Button';
 import Input from '../../../../components/Input';
 
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+import { SobreVoceValidation } from '../../../../validation/validations';
 
 export default function Benenficios() {
-  const [beneficios, setbeneficios] = useState([]);
-
-  useEffect(() => {
-    let beneficiosStorage = localStorage.getItem('beneficios-vagas');
-
-    if (!beneficiosStorage) return;
-
-    beneficiosStorage = JSON.parse(beneficiosStorage);
-
-    console.log(beneficiosStorage);
-    setbeneficios(beneficiosStorage);
-  }, []);
-
   const {
     handleSubmit,
     control,
+    reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(SobreVoceValidation),
+  });
 
-  const onSubmit = e => {
-    console.log(e);
-    const novo = beneficios;
-    novo.push(e);
-    localStorage.setItem('beneficios-vagas', JSON.stringify(novo));
-    setbeneficios(novo);
-  };
+  useEffect(() => {
+    if(localStorage.getItem("sobre-voce")) {
+      const sobreVoce = JSON.parse(localStorage.getItem('sobre-voce'));
 
-  const remove = item => {
-    console.log('aqui');
-    const novo = beneficios;
-
-    for (var i = 0; i < novo.length; i++) {
-      if (novo[i] === item) {
-        novo.splice(i, 1);
-      }
+      reset(sobreVoce);
     }
+  }, [])
 
-    localStorage.setItem('beneficios-vagas', JSON.stringify(novo));
-    console.log("novo1", novo);
-    setbeneficios([...novo]);
-  };
+  const onSubmit = async e => {
+    localStorage.setItem("sobre-voce", JSON.stringify(e))
+  }
 
   return (
     <Container>

@@ -16,8 +16,8 @@ export default function Cursos() {
   } = useForm();
 
   useEffect(() => {
-    if(localStorage.getItem("regras-vagas")) {
-      const dados = JSON.parse(localStorage.getItem("regras-vagas"));
+    if(localStorage.getItem("cursos-certificacoes")) {
+      const dados = JSON.parse(localStorage.getItem("cursos-certificacoes"));
 
       reset(dados);
     }
@@ -25,7 +25,8 @@ export default function Cursos() {
   }, []);
 
   const onSubmit = e => {
-    localStorage.setItem("regras-vagas", JSON.stringify(limpaObjeto(e)));
+    console.log('event cursos', e)
+    localStorage.setItem("cursos-certificacoes", JSON.stringify(limpaObjeto(e)));
   };
 
   return (

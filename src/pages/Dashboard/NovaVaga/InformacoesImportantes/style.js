@@ -26,7 +26,6 @@ export const ContainerInputGroup = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 24px;
 
   &.three {
     .input-group {
@@ -51,7 +50,6 @@ export const LastBox = styled.div`
   margin: 0 auto;
   max-width: 500px;
   width: 100%;
-  margin-bottom: 24px;
 `;
 
 export const Select = styled.select`

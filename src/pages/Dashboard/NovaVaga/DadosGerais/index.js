@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { Form, ContainerInputGroup, ContainerSubmit } from './style';
 
@@ -6,14 +6,11 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import Button from '../../../../components/Dashboard/Button';
-
 import Input from '../../../../components/Input';
 
 import { DadosGeraisVagaValidation } from '../../../../validation/validations';
 
 export default function DadosGerais() {
-  const [areas, setAreas] = useState('');
-
   const {
     handleSubmit,
     control,
@@ -22,32 +19,6 @@ export default function DadosGerais() {
   } = useForm({
     resolver: yupResolver(DadosGeraisVagaValidation),
   });
-
-  useEffect(() => {
-    setAreas([
-      {
-        value: 1,
-        label: 'Area1',
-      },
-
-      {
-        value: 2,
-        label: 'Area2',
-      },
-      {
-        value: 3,
-        label: 'Area3',
-      },
-      {
-        value: 4,
-        label: 'Area4',
-      },
-      {
-        value: 5,
-        label: 'Area5',
-      },
-    ]);
-  }, []);
 
   useEffect(() => {
     if(localStorage.getItem("dados-gerais")) {
@@ -123,7 +94,7 @@ export default function DadosGerais() {
             name="email"
             control={control}
             options={{
-              numericOnly: true,
+              delimiters: [''],
             }}
             errors={errors.email?.message}
           />

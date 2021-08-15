@@ -5,8 +5,11 @@ import { Container, ContainerInputGroup, ContainerButtonSubmit } from './style';
 import Button from '../../../../components/Dashboard/Button';
 import Input from '../../../../components/Input';
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import limpaObjeto from '../../../../util/limpaObjeto';
+
+import { FormacaoValidation } from '../../../../validation/validations';
 
 export default function Regras() {
   const {
@@ -14,18 +17,21 @@ export default function Regras() {
     control,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(FormacaoValidation),
+  });
 
   useEffect(() => {
-    if(localStorage.getItem("regras-vagas")) {
-      const dados = JSON.parse(localStorage.getItem("regras-vagas"));
+    if(localStorage.getItem("formacao")) {
+      const dados = JSON.parse(localStorage.getItem("formacao"));
 
       reset(dados);
     }
 
   }, [])
+
   const onSubmit = e => {
-    localStorage.setItem("regras-vagas", JSON.stringify(limpaObjeto(e)));
+    localStorage.setItem("formacao", JSON.stringify(limpaObjeto(e)));
   };
 
   return (

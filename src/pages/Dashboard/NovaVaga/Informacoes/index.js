@@ -16,8 +16,8 @@ export default function Provas() {
   } = useForm();
 
   useEffect(() => {
-    if(localStorage.getItem("regras-vagas")) {
-      const dados = JSON.parse(localStorage.getItem("regras-vagas"));
+    if(localStorage.getItem("idioma")) {
+      const dados = JSON.parse(localStorage.getItem("idioma"));
 
       reset(dados);
     }
@@ -25,7 +25,7 @@ export default function Provas() {
   }, []);
 
   const onSubmit = e => {
-    localStorage.setItem("regras-vagas", JSON.stringify(limpaObjeto(e)));
+    localStorage.setItem("idioma", JSON.stringify(limpaObjeto(e)));
   };
 
   return (

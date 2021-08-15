@@ -177,41 +177,46 @@ export const ContaValidation = Yup.object().shape({
 });
 
 export const DadosGeraisVagaValidation = Yup.object().shape({
-  titulo: Yup.string('Título da vaga obrigatório').required(
-    'Título da vaga obrigatório'
+  nome: Yup.string('Nome obrigatório').required('Nome obrigatório'),
+  sobrenome: Yup.string('Sobrenome obrigatório').required(
+    'Sobrenome obrigatório'
   ),
-  cargo: Yup.string('Cargo obrigatório').required('Cargo obrigatório'),
-  tipo_area_id: Yup.object().test(
-    'Preencha o area da vaga',
-    'Preencha o area da vaga',
-    function(item) {
-      if (!item) {
-        return false;
-      }
+  documento: Yup.string('CPF obrigatório').required('CPF obrigatório'),
+  email: Yup.string('Email obrigatório').required('Email obrigatório'),
+});
 
-      return true;
-    }
+export const SobreVoceValidation = Yup.object().shape({
+  sobre_voce: Yup.string('Conte um pouco sobre você').required('Conte um pouco sobre você'),
+  momento_profissional: Yup.string('Conte um pouco sobre o seu momento profissional').required(
+    'Conte um pouco sobre o seu momento profissional'
   ),
-  tipo_periodo_id: Yup.object().test(
-    'Preencha o Periodo da vaga',
-    'Preencha o Periodo da vaga',
-    function(item) {
-      if (!item) {
-        return false;
-      }
+});
 
-      return true;
-    }
-  ),
-  tipo_contrato_id: Yup.object().test(
-    'Preencha tipo de Contrato da vaga',
-    'Preencha tipo de Contrato da vaga',
-    function(item) {
-      if (!item) {
-        return false;
-      }
 
-      return true;
-    }
-  ),
+export const EnderecoValidation = Yup.object().shape({
+  cep: Yup.string('CEP obrigatório').required('CEP obrigatório'),
+  rua: Yup.string('Rua obrigatória').required('Rua obrigatória'),
+  bairro: Yup.string('Bairro obrigatório').required('Bairro obrigatório'),
+  cidade: Yup.string('Cidade obrigatória').required('Cidade obrigatória'),
+  estado: Yup.string('Estado obrigatório').required('Estado obrigatório'),
+  pais: Yup.string('País obrigatório').required('País obrigatório'),
+});
+
+export const FormacaoValidation = Yup.object().shape({
+  formacao: Yup.string('Nome da formação obrigatório').required('Nome da formação obrigatório'),
+  institucao: Yup.string('Nome da instituição obrigatória').required('Nome da instituição obrigatória'),
+  area_formacao: Yup.string('Área de formação obrigatória').required('Área de formação obrigatória'),
+  tipo_formacao: Yup.string('Tipo de formação obrigatória').required('Tipo de formação obrigatória'),
+  descricao_formacao: Yup.string('Descrição de formação obrigatória').required('Descrição de formação obrigatória'),
+  habilidades_formacao: Yup.string('Habilidades de formação obrigatório').required('Habilidades de formação obrigatório'),
+});
+
+export const HistoricoProfissionalValidation = Yup.object().shape({
+  empresa_trabalhou: Yup.string('Empresa obrigatória').required('Empresa obrigatória'),
+  media_salario: Yup.string('Média de salário obrigatória').required('Média de salário obrigatória'),
+  area_atuada: Yup.string('Área de atuação obrigatória').required('Área de atuação obrigatória'),
+  tipo_contrato: Yup.string('Tipo de contrato obrigatória').required('Tipo de contrato obrigatória'),
+  cargo_exercido: Yup.string('Cargo exercido obrigatório').required('Cargo exercido obrigatório'),
+  descricao_demandas: Yup.string('Atividades realizadas obrigatório').required('Atividades realizadas obrigatório'),
+  habilidades_exercidas: Yup.string('Habilidades exercidas obrigatório').required('Habilidades exercidas obrigatório'),
 });

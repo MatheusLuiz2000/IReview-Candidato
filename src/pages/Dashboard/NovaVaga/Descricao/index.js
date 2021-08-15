@@ -6,6 +6,9 @@ import Button from '../../../../components/Dashboard/Button';
 import Input from '../../../../components/Input';
 
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+import { EnderecoValidation } from '../../../../validation/validations';
 
 export default function Descricao() {
   const {
@@ -13,18 +16,20 @@ export default function Descricao() {
     control,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(EnderecoValidation),
+  });
 
   useEffect(() => {
-    if(localStorage.getItem("atividade-vagas")) {
-      const dados = JSON.parse(localStorage.getItem("atividade-vagas"));
+    if(localStorage.getItem("endereco")) {
+      const dados = JSON.parse(localStorage.getItem("endereco"));
 
       reset(dados);
     }
   }, []);
 
   const onSubmit = async e  => {
-    localStorage.setItem("atividade-vagas", JSON.stringify(e));
+    localStorage.setItem("endereco", JSON.stringify(e));
   }
 
   return (
@@ -39,7 +44,7 @@ export default function Descricao() {
             name="cep"
             control={control}
             options={{
-              delimiters: [''],
+              numericOnly: true,
             }}
             errors={errors.cep?.message}
           />

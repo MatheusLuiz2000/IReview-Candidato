@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+import { HistoricoProfissionalValidation } from '../../../../validation/validations';
 
 import { Container, ContainerButtonSubmit, ContainerInputGroup } from './style';
 import Input from '../../../../components/Input';
@@ -13,11 +16,13 @@ export default function Provas() {
     control,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(HistoricoProfissionalValidation),
+  });
 
   useEffect(() => {
-    if(localStorage.getItem("regras-vagas")) {
-      const dados = JSON.parse(localStorage.getItem("regras-vagas"));
+    if(localStorage.getItem("historico-profissional")) {
+      const dados = JSON.parse(localStorage.getItem("historico-profissional"));
 
       reset(dados);
     }
@@ -25,7 +30,7 @@ export default function Provas() {
   }, []);
 
   const onSubmit = e => {
-    localStorage.setItem("regras-vagas", JSON.stringify(limpaObjeto(e)));
+    localStorage.setItem("historico-profissional", JSON.stringify(limpaObjeto(e)));
   };
 
   return (
