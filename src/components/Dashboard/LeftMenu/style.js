@@ -53,8 +53,7 @@ export const ContainerSair = styled.div`
   justify-content: center;
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 30px;
   padding-bottom: 20px;
 
   p {

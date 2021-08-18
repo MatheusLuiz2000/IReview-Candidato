@@ -34,7 +34,7 @@ export default function Header() {
         <img src={IconUsuario} alt="Icon - Usuario" className="avatar" />
         <div className="dados-usuario">
           <h2>Matheus Luiz</h2>
-          <p>Director</p>
+          <p>Desenvolvedor front end</p>
         </div>
         <img src={IconArrowDown} alt="Icon - Arrow Down" />
       </ContainerUsuario>

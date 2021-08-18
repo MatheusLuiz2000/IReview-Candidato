@@ -32,22 +32,22 @@ export default function LeftMenu({ active }) {
             <p>Vagas</p>
           </li>
         </Link>
-        <Link to="/dashboard/candidatos">
-          <li className={active === 'candidatos' ? 'active' : ''}>
+        <Link to="/dashboard/candidaturas">
+          <li className={active === 'candidaturas' ? 'active' : ''}>
             <IconCandidatos />
-            <p>Candidatos</p>
+            <p>Candidaturas</p>
           </li>
         </Link>
         <Link to="/dashboard/mensagens">
           <li className={active === 'mensagens' ? 'active' : ''}>
             <IconMensagens />
-            <p>Mensagens</p>
+            <p>Chat</p>
           </li>
         </Link>
-        <Link to="/dashboard/configuracoes">
+        <Link to="/dashboard/cadastrar">
           <li className={active === 'configuracoes' ? 'active' : ''}>
             <IconConfiguracoes />
-            <p>Configurações</p>
+            <p>Cúrriculo</p>
           </li>
         </Link>
       </ContainerLista>

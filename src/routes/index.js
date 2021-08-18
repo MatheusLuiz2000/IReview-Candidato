@@ -2,12 +2,6 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 import Route from './Route';
 
-// Assinatura
-import DadosCadastrais from '../pages/Assinatura/DadosCadastrais';
-import FormasPagamento from '../pages/Assinatura/FormasPagamento';
-import Pagamento from '../pages/Assinatura/Pagamento';
-import FinalizaOperacao from '../pages/Assinatura/FinalizaOperacao';
-
 // Dashboard
 import DashboardPainel from '../pages/Dashboard/Painel';
 import Vagas from '../pages/Dashboard/Vagas';
@@ -32,7 +26,7 @@ export default function Routes() {
       <Route path="/cadastrar" exact component={NovaVaga} />
       <Route path="/dashboard/vagas/:id" isPrivate exact component={VagaID} />
       <Route
-        path="/dashboard/candidatos"
+        path="/dashboard/candidaturas"
         isPrivate
         exact
         component={Candidatos}

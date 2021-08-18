@@ -6,12 +6,11 @@ export const Container = styled.form`
 `;
 
 export const ContainerButtonSubmit = styled.div`
-  padding: 0px 35px;
-  text-align: right;
-  margin-bottom: 30px;
+  width: 500px;
+  margin: 0 auto;
 
   button {
-    width: auto;
+    width: 100%;
   }
 `;
 
