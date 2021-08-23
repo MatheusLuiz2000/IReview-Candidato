@@ -7,7 +7,7 @@ export const ContainerDashboard = styled.div`
 
 export const Container = styled.div`
   padding: 0px 20px;
-  margin-left: 250px;
+  margin-left: 212px;
   height: 100%;
 
   &.menu-active {

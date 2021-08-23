@@ -5,10 +5,10 @@ export const Container = styled.div`
   border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   height: 100%;
-  width: 250px;
+  width: 212px;
   visibility: visible;
   text-align: center;
-  padding: 7px 25px 15px 30px;
+  padding: 16px;
   position: fixed;
   transition: left 0.3s ease;
 
@@ -19,31 +19,9 @@ export const Container = styled.div`
 `;
 
 export const ContainerLista = styled.div`
-  margin-top: 30px;
-
-  li {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    color: #79869f;
-
-    svg {
-      margin-right: 10px;
-    }
-
-    &.active {
-      background-color: #0c1e5b;
-      border-radius: 6px;
-      color: #ffff;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-      margin-bottom: 10px;
-
-      svg,
-      g,
-      path {
-        stroke: #ffff;
-      }
-    }
+  p {
+    color: #0c1e5b;
+    margin-bottom: 24px;
   }
 `;
 
@@ -57,7 +35,7 @@ export const ContainerSair = styled.div`
   padding-bottom: 20px;
 
   p {
-    color: #79869f;
+    color: #0c1e5b;
     margin-left: 15px;
   }
 `;

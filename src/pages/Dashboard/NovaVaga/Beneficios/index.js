@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { Container, Box, ContainerSubmit, ContainerInputGroup } from './style';
+import { Container, Box, ContainerSubmit, ContainerInputGroup, ContainerImage } from './style';
 
 import Button from '../../../../components/Dashboard/Button';
 import Input from '../../../../components/Input';
@@ -29,6 +29,7 @@ export default function Benenficios() {
   }, [])
 
   const onSubmit = async e => {
+    console.log('oie', e);
     localStorage.setItem("sobre-voce", JSON.stringify(e))
   }
 
@@ -56,6 +57,13 @@ export default function Benenficios() {
             placeholder="Conta pra gente qual o seu momento profissional!"
             errors={errors.momento_profissional?.message}
           />
+        </ContainerInputGroup>
+        <ContainerInputGroup>
+          <ContainerImage>
+            <p>Escolha uma foto bem bonita para que as empresas vejam seu perﬁl!</p>
+            <input type="file" id="foto_perfil" name="foto_perfil" accept="image/png, image/jpeg, image/jpg" />
+            <p>Formatos válidos: JPG, PNG, JPEG</p>
+          </ContainerImage>
         </ContainerInputGroup>
         <ContainerSubmit>
           <Button tipo="primary">Próximo</Button>

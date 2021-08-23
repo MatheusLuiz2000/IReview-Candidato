@@ -4,51 +4,39 @@ import { Link } from 'react-router-dom';
 import { Container, ContainerLista, ContainerSair } from './style';
 
 import Logo from '../../../assets/images/logo_dashboard.svg';
+import Candidatura from '../../../assets/images/candidatura.png';
+import Chat from '../../../assets/images/chat.png';
+import Curriculo from '../../../assets/images/curriculo.png';
+import Vagas from '../../../assets/images/vagas.png';
+import Dashboard from '../../../assets/images/dashboard.png';
 
 // Icons
-import {
-  IconDashboard,
-  IconVagas,
-  IconCandidatos,
-  IconMensagens,
-  IconConfiguracoes,
-  IconSair,
-} from '../../Icons';
+import { IconSair } from '../../Icons';
 
-export default function LeftMenu({ active }) {
+export default function LeftMenu() {
   return (
     <Container id="menu">
       <img src={Logo} alt="Logo" />
       <ContainerLista>
         <Link to="/dashboard">
-          <li className={active === 'dashboard' ? 'active' : ''}>
-            <IconDashboard />
-            <p>Dashboard</p>
-          </li>
+          <img src={Dashboard} alt="Dashboard" width="40px" />
+          <p>Dashboard</p>
         </Link>
         <Link to="/dashboard/vagas">
-          <li className={active === 'vagas' ? 'active' : ''}>
-            <IconVagas />
-            <p>Vagas</p>
-          </li>
+          <img src={Vagas} alt="Vagas" width="40px" />
+          <p>Vagas</p>
         </Link>
         <Link to="/dashboard/candidaturas">
-          <li className={active === 'candidaturas' ? 'active' : ''}>
-            <IconCandidatos />
-            <p>Candidaturas</p>
-          </li>
+          <img src={Candidatura} alt="Candidatura" width="40px" />
+          <p>Candidaturas</p>
         </Link>
         <Link to="/dashboard/mensagens">
-          <li className={active === 'mensagens' ? 'active' : ''}>
-            <IconMensagens />
-            <p>Chat</p>
-          </li>
+          <img src={Chat} alt="Chat" width="40px" />
+          <p>Chat</p>
         </Link>
-        <Link to="/dashboard/cadastrar">
-          <li className={active === 'configuracoes' ? 'active' : ''}>
-            <IconConfiguracoes />
-            <p>Cúrriculo</p>
-          </li>
+        <Link to="/cadastrar">
+          <img src={Curriculo} alt="Curriculo" width="40px" />
+          <p>Cúrriculo</p>
         </Link>
       </ContainerLista>
       <ContainerSair>

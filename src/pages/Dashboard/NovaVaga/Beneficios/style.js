@@ -95,3 +95,42 @@ export const ContainerInputGroup = styled.div`
     }
   }
 `;
+
+export const ContainerImage = styled.div`
+  border-radius: 8px;
+  background-color: white;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 55px;
+  padding: 16px;
+
+  input {
+    color: #7c7d8d;
+    margin-bottom: 8px;
+    font-size: 15px;
+
+  ::-webkit-file-upload-button {
+      background: #112776;
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+  }
+
+  }
+
+  label {
+    color: #7c7d8d;
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  p {
+    color: #7c7d8d;
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+`;
