@@ -38,7 +38,7 @@ export default function Login() {
   });
 
   useEffect(() => {
-    localStorage.removeItem("dadosEmpresa");
+    localStorage.removeItem("dadosCandidato");
   }, [])
 
   const onSubmit = async e => {
@@ -50,7 +50,7 @@ export default function Login() {
 
     retornoMensagem(entrar.status, '🥳 Login efetuado com sucesso!');
 
-    localStorage.setItem("dadosEmpresa", JSON.stringify(entrar.data));
+    localStorage.setItem("dadosCandidato", JSON.stringify(entrar.data));
 
     setTimeout(() => {
       window.location.href = "/dashboard";

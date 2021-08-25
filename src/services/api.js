@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const dados = JSON.parse(localStorage.getItem('dadosEmpresa'));
+const dados = JSON.parse(localStorage.getItem('dadosCandidato'));
 
 export async function informacoesEmpresa() {
   // force commit

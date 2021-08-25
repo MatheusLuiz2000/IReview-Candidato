@@ -16,11 +16,6 @@ export default function Vagas() {
     <Content
       titulo="Vagas"
       active="vagas"
-      buttonExtra={
-        <Button auto tipo="primary">
-          Criar Nova Vaga
-        </Button>
-      }
     >
       <Container>
         <Vaga>

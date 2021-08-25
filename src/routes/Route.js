@@ -7,7 +7,7 @@ export default function RouteWrapper({
   isPrivate,
   ...rest
 }) {
-  let dados = localStorage.getItem('dadosEmpresa');
+  let dados = localStorage.getItem('dadosCandidato');
 
   // if (!dados && isPrivate) {
   //   return <Redirect to="/login" />;

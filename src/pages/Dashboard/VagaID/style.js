@@ -1,50 +1,35 @@
 import styled from 'styled-components';
 
-export const ContainerOpcoes = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 50px;
-
-  p {
-    width: 70%;
-    text-align: left;
-    font-size: 14px;
-    line-height: 23px;
-    color: #b5b5b5;
-  }
-  button {
-    width: auto;
-
-    :first-child {
-      margin-right: 30px;
-    }
-  }
+export const TituloVaga = styled.h3`
+  color: #0f3f62;
+  font-weight: 500;
+  font-size: 24px;
+  margin-left: 16px;
 `;
 
-export const ContainerTable = styled.div`
-  width: 100%;
-  text-align: left;
-  border-radius: 10px;
-
-  width: 100%;
+export const Box = styled.div`
   margin: 0 auto;
+  width: 100%;
+  max-width: 180px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+`;
 
-  td svg {
-    width: 55px;
-  }
 
-  .column4 p {
-    color: #8a8a8a;
+export const Conteudo = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+`;
 
-    :first-child {
-      padding-top: 20px;
-    }
+export const TextoEsquerda = styled.span`
+  color: #0f3f62;
+  font-size: 18px;
+  font-weight: 500;
+`;
 
-    padding-bottom: 10px;
-    b {
-      font-weight: 600;
-      margin-right: 10px;
-    }
-  }
+export const TextoDireita = styled.span`
+  color: #4c4c4c;
+  font-size: 16px;
+  margin-left: 8px;
 `;

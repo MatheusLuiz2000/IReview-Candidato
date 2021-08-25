@@ -44,7 +44,7 @@ export default function LeftMenu() {
           className="no-style"
           type="button"
           onClick={() => {
-            localStorage.removeItem('dadosEmpresa');
+            localStorage.removeItem('dadosCandidato');
             window.location.href = '/login';
           }}
         >
