@@ -104,8 +104,9 @@ export const ContainerImage = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-right: 55px;
   padding: 16px;
+  background: #f9f9f9;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   input {
     color: #7c7d8d;
@@ -133,4 +134,10 @@ export const ContainerImage = styled.div`
     margin-bottom: 8px;
     font-size: 15px;
   }
+`;
+
+export const BoxImage = styled.div`
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
 `;

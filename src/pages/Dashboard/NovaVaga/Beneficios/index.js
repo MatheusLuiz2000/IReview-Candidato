@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { Container, Box, ContainerSubmit, ContainerInputGroup, ContainerImage } from './style';
+import { Container, Box, ContainerSubmit, ContainerInputGroup, ContainerImage, BoxImage } from './style';
 
 import Button from '../../../../components/Dashboard/Button';
 import Input from '../../../../components/Input';
@@ -58,13 +58,13 @@ export default function Benenficios() {
             errors={errors.momento_profissional?.message}
           />
         </ContainerInputGroup>
-        <ContainerInputGroup>
+        <BoxImage>
           <ContainerImage>
             <p>Escolha uma foto bem bonita para que as empresas vejam seu perﬁl!</p>
             <input type="file" id="foto_perfil" name="foto_perfil" accept="image/png, image/jpeg, image/jpg" />
             <p>Formatos válidos: JPG, PNG, JPEG</p>
           </ContainerImage>
-        </ContainerInputGroup>
+        </BoxImage>
         <ContainerSubmit>
           <Button tipo="primary">Próximo</Button>
         </ContainerSubmit>
