@@ -10,6 +10,7 @@ import VagaID from '../pages/Dashboard/VagaID';
 import Candidatos from '../pages/Dashboard/Candidatos';
 import Mensagens from '../pages/Dashboard/Mensagens';
 import Configuracoes from '../pages/Dashboard/Configuracoes';
+import AnexarCurriculo from '../pages/Dashboard/AnexarCurriculo';
 
 // Login
 import Login from '../pages/Login';
@@ -23,6 +24,7 @@ export default function Routes() {
 
       <Route path="/dashboard" exact isPrivate component={DashboardPainel} />
       <Route path="/dashboard/vagas" isPrivate exact component={Vagas} />
+      <Route path="/anexar-curriculo" exact component={AnexarCurriculo} />
       <Route path="/cadastrar" exact component={NovaVaga} />
       <Route path="/dashboard/vagas/:id" isPrivate exact component={VagaID} />
       <Route

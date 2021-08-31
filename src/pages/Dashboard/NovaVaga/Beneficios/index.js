@@ -29,7 +29,6 @@ export default function Benenficios() {
   }, [])
 
   const onSubmit = async e => {
-    console.log('oie', e);
     localStorage.setItem("sobre-voce", JSON.stringify(e))
   }
 

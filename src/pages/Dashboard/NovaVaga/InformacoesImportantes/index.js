@@ -128,7 +128,12 @@ export default function InformacoesImportantes() {
         />
       </LastBox>
       <ContainerButtonSubmit>
-        <Button type="submit">Finalizar</Button>
+        <Button
+          onClick={() => {
+            // aqui vai a request
+            window.location.href = '/dashboard/vagas';
+          }}
+          type="submit">Finalizar</Button>
       </ContainerButtonSubmit>
     </Container>
   );
