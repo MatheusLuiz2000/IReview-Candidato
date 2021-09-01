@@ -139,9 +139,7 @@ export const MensagemRecebida = styled.div`
 export const ContainerEnviaMensagem = styled.div`
   display: flex;
   align-items: center;
-  position: fixed;
   bottom: 36px;
-  width: 55%;
 
   input {
     padding: 10px 15px;
@@ -156,4 +154,60 @@ export const ContainerEnviaMensagem = styled.div`
   button {
     width: auto;
   }
+`;
+
+export const Box = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const BoxLeft = styled(Conversas)`
+  width: 30%;
+`;
+
+export const BoxRight = styled(Conversas)`
+  width: 65%;
+`;
+
+export const BoxChat = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+`;
+
+export const BoxPrincipal = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const BoxNotification = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+
+export const Name = styled.span`
+  font-size: 14px;
+  color: #0c1e5b;
+  font-weight: 500;
+`;
+
+export const Message = styled.span`
+  font-size: 12px;
+  color: #4c4c4c;
+  margin-top: 4px;
+`;
+
+export const Notification = styled.div`
+  background: #0c1e5b;
+  border-radius: 50%;
+  padding: 4px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 4px;
+  font-size: 14px;
 `;

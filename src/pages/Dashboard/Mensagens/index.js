@@ -9,6 +9,15 @@ import {
   MensagemEnviada,
   MensagemRecebida,
   ContainerEnviaMensagem,
+  Box,
+  BoxLeft,
+  BoxRight,
+  BoxChat,
+  BoxPrincipal,
+  Name,
+  Message,
+  BoxNotification,
+  Notification,
 } from './style';
 
 // Components
@@ -23,6 +32,7 @@ import IconEmoji from '../../../assets/icons/plus.svg';
 
 // Images
 import Avatar1 from '../../../assets/images/avatar2.svg';
+import IconUsuario from '../../../assets/icons/user1.svg';
 import Candidato1 from '../../../assets/images/candidato1.jpg';
 
 import { buscarConversas } from '../../../services/api';
@@ -30,25 +40,75 @@ import { buscarConversas } from '../../../services/api';
 export default function Mensagens() {
   const [previaMensagem, setPreviaMensagem] = useState([]);
 
-  async function buscarMensagens() {
-    const buscar = await buscarConversas();
+  // async function buscarMensagens() {
+  //   const buscar = await buscarConversas();
 
-    return setPreviaMensagem(buscar.data);
-  }
+  //   return setPreviaMensagem(buscar.data);
+  // }
 
-  useEffect(() => {
-    buscarMensagens();
-  }, []);
+  // useEffect(() => {
+  //   buscarMensagens();
+  // }, []);
 
   return (
     <Content active="mensagens" titulo="Mensagens">
-      <ListaMensagens>
+      {/* <ListaMensagens>
         <div className="chat-title">
           <h2>Chat</h2>
         </div>
         {previaMensagem.length <= 0 ? <h5>Ainda não possui mensagens</h5> : ''}
-      </ListaMensagens>
-      {/* <Conversas>
+      </ListaMensagens> */}
+      <Box>
+        <BoxLeft>
+          <div className="chat-title">
+            <h2>Chat</h2>
+          </div>
+          <BoxChat>
+            <img src={Avatar1} alt="avatar" style={{ marginRight: '8px', width: "40px" }} />
+            <BoxPrincipal>
+              <Name>Matheus Luiz Matos Lopes</Name>
+              <Message>Olá! Tudo bem? Meu nome é Matheus Luiz Matos Lopes..</Message>
+            </BoxPrincipal>
+            <BoxNotification>
+              <Message>5min</Message>
+              <Notification>2</Notification>
+            </BoxNotification>
+          </BoxChat>
+          <BoxChat>
+            <img src={IconUsuario} alt="avatar" style={{ marginRight: '8px', width: "40px" }} />
+            <BoxPrincipal>
+              <Name>Aline Bujato</Name>
+              <Message>Boa tarde! Tudo bom? Meu nome é Aline Bujato..</Message>
+            </BoxPrincipal>
+            <BoxNotification>
+              <Message>7min</Message>
+              <Notification>5</Notification>
+            </BoxNotification>
+          </BoxChat>
+          <BoxChat>
+            <img src={Avatar1} alt="avatar" style={{ marginRight: '8px', width: "40px" }} />
+            <BoxPrincipal>
+              <Name>Lucas Maropo</Name>
+              <Message>Olá! Tudo bem? Meu nome é Lucas Maropo..</Message>
+            </BoxPrincipal>
+            <BoxNotification>
+              <Message>20min</Message>
+              <Notification>3</Notification>
+            </BoxNotification>
+          </BoxChat>
+          <BoxChat>
+            <img src={IconUsuario} alt="avatar" style={{ marginRight: '8px', width: "40px" }} />
+            <BoxPrincipal>
+              <Name>Stefanie Cruz</Name>
+              <Message>Boa tarde! Tudo bom? Meu nome é Stefanie Cruz..</Message>
+            </BoxPrincipal>
+            <BoxNotification>
+              <Message>40min</Message>
+              <Notification>8</Notification>
+            </BoxNotification>
+          </BoxChat>
+        </BoxLeft>
+        <BoxRight>
           <h2>Matheus Luiz - Desenvolvedor Full Stack</h2>
           <MensagemEnviada>
             <div>Olá, tudo bem?</div>
@@ -64,7 +124,7 @@ export default function Mensagens() {
           </MensagemRecebida>
           <MensagemRecebida>
             <img src={Candidato1} alt="Candidato1" />
-            <div>Claro! Vamos marcar uma call as 09:30 no dia 30/05/2021</div>
+            <div>Claro! Vamos marcar uma call as 09:30 no dia 30/11/2021</div>
           </MensagemRecebida>
           <MensagemRecebida>
             <img src={Candidato1} alt="Candidato1" />
@@ -84,7 +144,8 @@ export default function Mensagens() {
               ENVIAR
             </Button>
           </ContainerEnviaMensagem>
-        </Conversas> */}
+        </BoxRight>
+      </Box>
     </Content>
   );
 }
